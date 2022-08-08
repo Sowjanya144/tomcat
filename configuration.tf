@@ -1,10 +1,10 @@
 #creating configuartion for pipeline
 
-resource "aws_imagebuilder_infrastructure_configuration" "example" {
+resource "aws_imagebuilder_infrastructure_configuration" "tomcat" {
   description                   = "created for testing"
   instance_profile_name         = aws_iam_instance_profile.instance.name
   instance_types                = ["t2.micro","t3.small"]
-  name                          = "apache"
+  name                          = "tomcat"
   #security_group_ids            = [aws_security_group.builder.id]
   #subnet_id                     = data.aws_subnet.default.id
   terminate_instance_on_failure = true
@@ -15,8 +15,8 @@ resource "aws_imagebuilder_infrastructure_configuration" "example" {
 
 
 
-resource "aws_imagebuilder_distribution_configuration" "example" {
-  name = "apache"
+resource "aws_imagebuilder_distribution_configuration" "tomcat" {
+  name = "tomcat"
 
   distribution {
     ami_distribution_configuration {

@@ -1,6 +1,6 @@
 #creating a recipe
 
-resource "aws_imagebuilder_image_recipe" "example" {
+resource "aws_imagebuilder_image_recipe" "tomcat" {
   block_device_mapping {
     device_name = "/dev/xvdb"
 
@@ -12,10 +12,10 @@ resource "aws_imagebuilder_image_recipe" "example" {
   }
 
   component {
-    component_arn = aws_imagebuilder_component.httpd.arn
+    component_arn = aws_imagebuilder_component.tomcat.arn
   }
 
-  name         = "apache"
+  name         = "tomcat"
  #parent_image = var.ami
   parent_image = "arn:aws:imagebuilder:us-east-2:aws:image/amazon-linux-2-x86/x.x.x"
   version      = "0.0.1"

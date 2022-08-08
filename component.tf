@@ -1,6 +1,6 @@
 #creating a httpd component
 
-resource "aws_imagebuilder_component" "httpd" {
+resource "aws_imagebuilder_component" "tomcat" {
   data = yamlencode({
     phases = [{
       name = "build"
@@ -22,7 +22,6 @@ resource "aws_imagebuilder_component" "httpd" {
            # "sudo mv terraform.txt /etc/systemd/system/tomcat.service",
              "sudo cp tomcat.service /etc/systemd/system/",
             "sudo systemctl daemon-reload",
-           #"sudo /opt/tomcat/bin/startup.sh"
             "sudo systemctl start tomcat",
             "sudo systemctl enable tomcat"
           ]
@@ -31,8 +30,8 @@ resource "aws_imagebuilder_component" "httpd" {
     }]
     schemaVersion = 1.0
   })
-  name     = "installhttpd"
+  name     = "installtomcat"
   platform = "Linux"
-  version  = "1.1.0"
+  version  = "1.0.0"
 }
 
