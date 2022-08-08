@@ -1,6 +1,6 @@
 resource "aws_iam_role" "build_role" {
   name               = "imagebuild_role"
-  assume_role_policy = "${file("role.json")}"
+  assume_role_poliicy = file("role.json")
 }
 
 resource "aws_iam_policy" "image_test_policy1" {
