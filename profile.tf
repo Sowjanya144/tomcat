@@ -1,7 +1,12 @@
 resource "aws_iam_role" "build_role" {
   name               = "imagebuild_role"
+<<<<<<< HEAD
  #assume_role_policy = "${file("role.json")}"
   assume_role_policy = file("${role.json}")
+=======
+  assume_role_policy = "${file("role.json")}"
+ #assume_role_policy = file("${part.module}/${role}.json")
+>>>>>>> bf6f49c (modified profile file)
 }
 
 resource "aws_iam_policy" "image_test_policy1" {
