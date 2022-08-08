@@ -6,17 +6,20 @@ resource "aws_iam_role" "build_role" {
 
 resource "aws_iam_policy" "image_test_policy1" {
     name = "image-policy1"
-    policy = "${file("ssm.json")}"
+   #policy = "${file("ssm.json")}"
+    policy = file("${path.module}/ssm.json")
 }
 
 resource "aws_iam_policy" "image_test_policy2" {
     name = "image-policy2"
-    policy = "${file("ec2profile.json")}"
+    #policy = "${file("ec2profile.json")}"
+    policy = file("${path.module}/ec2profile.json")
 }
 
 resource "aws_iam_policy" "image_test_policy3" {
     name = "image-policy3"
-    policy = "${file("s3fullaccess.json")}"
+    #policy = "${file("s3fullaccess.json")}"
+    policy = file("${path.module}/s3fullaccess.json")
 }
 
 resource "aws_iam_policy_attachment" "image_test1" {
