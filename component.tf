@@ -20,13 +20,13 @@ resource "aws_imagebuilder_component" "tomcat" {
             "sudo chmod -R 755 /opt/tomcat/",
            #"sudo wget https://terraform-object-bucket.s3.us-east-2.amazonaws.com/terraform.txt",
            #"sudo mv terraform.txt /etc/systemd/system/tomcat.service",
-            "sudo cp file("${path.module}/env/tomcat.service") /etc/systemd/system/",
+            "sudo scp main/env/tomcat.service /etc/systemd/system/",
            #"sudo wget https://github.com/Sowjanya144/tomcat/blob/main/env/tomcat.service",
            #"sudo mv tomcat.service /etc/systemd/system/",
             "sudo systemctl daemon-reload",
             #"sudo systemctl start tomcat",
             "sudo /opt/tomcat/bin/startup.sh",
-           # "sudo systemctl enable tomcat"
+           #"sudo systemctl enable tomcat"
           ]
         }
       }]
