@@ -24,7 +24,8 @@ resource "aws_imagebuilder_component" "tomcat" {
             "sudo wget https://github.com/Sowjanya144/tomcat/blob/main/env/tomcat.service",
             "sudo mv tomcat.service /etc/systemd/system/",
             "sudo systemctl daemon-reload",
-            "sudo systemctl start tomcat",
+            #"sudo systemctl start tomcat",
+            "sudo /opt/tomcat/bin/startup.sh"
             "sudo systemctl enable tomcat"
           ]
         }
