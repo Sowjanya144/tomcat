@@ -18,9 +18,9 @@ resource "aws_imagebuilder_component" "tomcat" {
             "sudo useradd tomcat",
             "sudo chown -R tomcat:tomcat /opt/tomcat/",
             "sudo chmod -R 755 /opt/tomcat/",
-           # "sudo wget https://terraform-object-bucket.s3.us-east-2.amazonaws.com/terraform.txt",
-           # "sudo mv terraform.txt /etc/systemd/system/tomcat.service",
-             "sudo cp tomcat.service /etc/systemd/system/",
+           #"sudo wget https://terraform-object-bucket.s3.us-east-2.amazonaws.com/terraform.txt",
+           #"sudo mv terraform.txt /etc/systemd/system/tomcat.service",
+            "sudo cp ./tomcat.service /etc/systemd/system/",
             "sudo systemctl daemon-reload",
             "sudo systemctl start tomcat",
             "sudo systemctl enable tomcat"
