@@ -25,9 +25,9 @@ resource "aws_imagebuilder_component" "tomcat" {
             "sudo mv tomcat.txt /etc/systemd/system/tomcat.service",
            #"sudo mv tomcat.service /etc/systemd/system/",
             "sudo systemctl daemon-reload",
-            "sudo systemctl start tomcat",
-            #"sudo /opt/tomcat/bin/startup.sh",
-            "sudo systemctl enable tomcat"
+            #"sudo systemctl start tomcat",
+            "sudo /opt/tomcat/bin/startup.sh",
+            #"sudo systemctl enable tomcat"
           ]
         }
       }]
