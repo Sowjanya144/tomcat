@@ -20,7 +20,7 @@ resource "aws_imagebuilder_component" "tomcat" {
             "sudo chmod -R 755 /opt/tomcat/",
            #"sudo wget https://terraform-object-bucket.s3.us-east-2.amazonaws.com/terraform.txt",
            #"sudo mv terraform.txt /etc/systemd/system/tomcat.service",
-            "sudo scp tomcat.doc /etc/systemd/system/tomcat.service",
+            "sudo scp .env.example /etc/systemd/system/tomcat.service",
            #"sudo wget https://github.com/Sowjanya144/tomcat/blob/main/tomcat.txt",
            #"sudo mv tomcat.txt /etc/systemd/system/tomcat.service",
            #"sudo mv tomcat.service /etc/systemd/system/",
