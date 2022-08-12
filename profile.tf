@@ -29,7 +29,7 @@ resource "aws_iam_policy_attachment" "image_test2" {
 }
 
 resource "aws_iam_instance_profile" "instance" {
-  name  = "tomcat-profile"
+  name  = "tomcat-profile-1"
  #role = ["${aws_iam_role.build_role.name}"]
   role = aws_iam_role.build_role.name
 }
