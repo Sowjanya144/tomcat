@@ -27,7 +27,7 @@ resource "aws_imagebuilder_component" "tomcat" {
             "sudo systemctl daemon-reload",
             "sudo systemctl start tomcat",
            #"sudo /opt/tomcat/bin/startup.sh",
-            "sudo systemctl enable tomcat"
+           #` "sudo systemctl enable tomcat"
           ]
         }
       }]
